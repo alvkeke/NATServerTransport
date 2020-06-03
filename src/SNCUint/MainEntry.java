@@ -66,8 +66,8 @@ public class MainEntry {
 				new ServerClass();
 				break;
 			case "-n":
-				//				  0 (      1    )  2    		3		4
-				// java -jar xxx -n [gui| tcp/udp inner-port nat-port key]
+				//				  0 (      1    )  		2    	3			4		  5		6
+				// java -jar xxx -n [gui| tcp/udp inner-port nat-port inner-ser-port key ip-address]
 
 				if (args.length < 2) {
 					printError();
@@ -118,9 +118,9 @@ public class MainEntry {
 					}
 
 					if (args[1].toLowerCase().equals("tcp")) {
-						new NATServer(SOCKET_TYPE_TCP, innerPort, innerSerPort, innerSerPort, args[5], args[6]);
+						new NATServer(SOCKET_TYPE_TCP, innerPort, natPort, innerSerPort, args[5], args[6]);
 					} else if (args[1].toLowerCase().equals("udp")) {
-						new NATServer(SOCKET_TYPE_UDP, innerPort, innerSerPort, innerSerPort, args[5], args[6]);
+						new NATServer(SOCKET_TYPE_UDP, innerPort, natPort, innerSerPort, args[5], args[6]);
 					} else {
 						printError();
 						printHelp_NATServer();
