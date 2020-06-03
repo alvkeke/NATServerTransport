@@ -44,7 +44,7 @@ public class NATServer {
 			InetSocketAddress publicServerAddr = new InetSocketAddress(ip, PORT_PUBLIC_SERVER);
 
 
-			// new Thread(new RegisterServerThread(publicServerAddr, soType, natPort, key)).start();
+			new Thread(new RegisterServerThread(publicServerAddr, soType, natPort, key)).start();
 
 		} catch (UnknownHostException e) {
 			System.out.println("Public Server Host not Found");
