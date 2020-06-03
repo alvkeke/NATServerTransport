@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MCServerTranslator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MCServerTranslator_jar</output-path>
+    <root id="archive" name="MCServerTranslator.jar">
+      <element id="module-output" name="NATServerTransport" />
+    </root>
+  </artifact>
+</component>
